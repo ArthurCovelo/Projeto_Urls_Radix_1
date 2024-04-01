@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
-using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Service;
 using Service.Validation;
 
 namespace WebApi.Controllers
@@ -9,12 +9,12 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class UrlController : ControllerBase
     {
-        private readonly IUrlService _urlService;
+        private readonly UrlService urlService;
         private readonly Validacoes _urlValidationService;
 
-        public UrlController(IUrlService urlServico, Validacoes urlValidationService)
+        public UrlController(UrlService urlServico, Validacoes urlValidationService)
         {
-            _urlService = urlServico;
+            urlService = urlServico;
             _urlValidationService = urlValidationService;
         }
 
@@ -32,7 +32,7 @@ namespace WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var savedUrl = await _urlService.AddAsync(url);
+            var savedUrl = await urlService.AddAsync(url);
             return CreatedAtAction(nameof(GetUrlById), new { id = savedUrl.Id }, savedUrl);
         }
 
@@ -41,13 +41,13 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<IActionResult> DeleteUrl(int id)
         {
-            var url = await _urlService.GetByIdAsync(id);
+            var url = await urlService.GetByIdAsync(id);
             if (url == null)
             {
                 return NotFound();
             }
 
-            await _urlService.DeleteAsync(id);
+            await urlService.DeleteAsync(id);
             return Ok();
         }
 
@@ -55,7 +55,7 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<ActionResult<IEnumerable<Url>>> ListarUrls()
         {
-            var urls = await _urlService.ListUrlsAsync();
+            var urls = await urlService.ListUrlsAsync();
             return Ok(urls);
         }
 
@@ -63,7 +63,7 @@ namespace WebApi.Controllers
         [Produces("application/json")]
         public async Task<ActionResult<Url>> GetUrlById(int id)
         {
-            var url = await _urlService.GetByIdAsync(id);
+            var url = await urlService.GetByIdAsync(id);
             if (url == null)
             {
                 return NotFound();
@@ -74,7 +74,7 @@ namespace WebApi.Controllers
         [HttpPut("/api/UpdateUrl/{id}")]
         public async Task<IActionResult> UpdateUrl(int id, [FromBody] Url url)
         {
-            var existingUrl = await _urlService.GetByIdAsync(id);
+            var existingUrl = await urlService.GetByIdAsync(id);
             if (existingUrl == null)
             {
                 return NotFound();
@@ -93,7 +93,7 @@ namespace WebApi.Controllers
 
             existingUrl.Link = url.Link;
 
-            await _urlService.UpdateAsync(existingUrl);
+            await urlService.UpdateAsync(existingUrl);
 
             return Ok();
         }
