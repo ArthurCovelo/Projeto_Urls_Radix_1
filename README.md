@@ -19,6 +19,8 @@ Este projeto é uma aplicação de exemplo que gerencia URLs usando .NET para a 
 
 ## Pré-requisitos
 
+- Visual Studio Code instalado
+
 - Docker instalado e configurado em seu sistema.
 - Conexão à internet (para baixar as imagens necessárias do Docker Hub).
 
