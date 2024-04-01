@@ -25,14 +25,14 @@ Este projeto é uma aplicação de exemplo que gerencia URLs usando .NET para a 
 ## Instalação
 
 **Passo 1**
-Procure no menu iniciar pelo programa "Powershell" e dê clique direito no ícone para Executar com Administrador. Digite o comando "wsl --install" e pressione Enter. Após instalação, reinicie.
+- Procure no menu iniciar pelo programa "Powershell" e dê clique direito no ícone para Executar com Administrador. Digite o comando "wsl --install" e pressione Enter. Após instalação, reinicie.
 
 **Passo 2**
-Baixar e instalar as atualizações para o kernel Linux.
+- Baixar e instalar as atualizações para o kernel Linux.
 Link: [Install -Update Kernel Linux](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWQ2UFVUMy1JWGk2cjI4LV9iUUZWWW5DTjVJUXxBQ3Jtc0ttemh3b2lTZ2VyNlI3d2o3OWZwYk5lLWk1MTJpa3NWcEZYdHJRQndDNlRPVmw0TGJFM1B2V1NyOXl4d3Y3UFRpMGR3OFFQdWVQSXNZS1JHb2RrbFVaQjkyclNvS1d1Y3F1SjdHVUNmTUFsX0swVFVQSQ&q=https%3A%2F%2Fwslstorestorage.blob.core.windows.net%2Fwslblob%2Fwsl_update_x64.msi&v=kh1gkqCrNx4)
 
 **Passo 3**
-Baixar e instalar o Docker Desktop. Após instalação, reinicie.
+- Baixar e instalar o Docker Desktop. Após instalação, reinicie.
 Link: [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)
 
 ## Clonar e Execução
