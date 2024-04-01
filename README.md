@@ -27,7 +27,7 @@ Este projeto é uma aplicação de exemplo que gerencia URLs usando .NET para a 
 1. **Clone este repositório:**
 
 ```bash
-git clone https://github.com/ArthurCovelo/Projeto-Urls-Radix.git
+git clone https://github.com/ArthurCovelo/Projeto_Urls_Radix_1.git
 ```
 2. **Execute o comando Docker Compose para construir e iniciar os serviços:**
 ```bash
